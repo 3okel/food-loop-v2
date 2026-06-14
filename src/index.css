@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-heading: 'Acumin Variable Concept', 'Acumin Pro', Inter, Arial, sans-serif;
+    --font-body: 'Acumin Variable Concept', 'Acumin Pro', Inter, Arial, sans-serif;
+    --font-arabic: 'Cairo', 'Tajawal', Arial, sans-serif;
+
+    --background: 42 45% 94%;
+    --foreground: 153 54% 15%;
+    --card: 40 31% 90%;
+    --card-foreground: 153 54% 15%;
+    --popover: 42 45% 94%;
+    --popover-foreground: 153 54% 15%;
+    --primary: 93 15% 38%;
+    --primary-foreground: 42 45% 94%;
+    --secondary: 98 3% 55%;
+    --secondary-foreground: 42 45% 94%;
+    --muted: 40 31% 88%;
+    --muted-foreground: 98 3% 40%;
+    --accent: 98 3% 55%;
+    --accent-foreground: 42 45% 94%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 40 20% 82%;
+    --input: 40 20% 82%;
+    --ring: 93 15% 38%;
+    --chart-1: 100 100% 44%;
+    --chart-2: 153 39% 30%;
+    --chart-3: 30 45% 42%;
+    --chart-4: 80 30% 60%;
+    --chart-5: 40 50% 70%;
+    --radius: 0.75rem;
+    --sidebar-background: 153 39% 8%;
+    --sidebar-foreground: 80 30% 92%;
+    --sidebar-primary: 100 100% 44%;
+    --sidebar-primary-foreground: 153 39% 15%;
+    --sidebar-accent: 153 39% 15%;
+    --sidebar-accent-foreground: 80 30% 92%;
+    --sidebar-border: 153 30% 20%;
+    --sidebar-ring: 100 100% 44%;
+  }
+
+  .dark {
+    --background: 153 39% 6%;
+    --foreground: 40 33% 95%;
+    --card: 153 30% 10%;
+    --card-foreground: 40 33% 95%;
+    --popover: 153 39% 6%;
+    --popover-foreground: 40 33% 95%;
+    --primary: 100 100% 44%;
+    --primary-foreground: 153 39% 15%;
+    --secondary: 153 30% 15%;
+    --secondary-foreground: 40 33% 95%;
+    --muted: 153 20% 14%;
+    --muted-foreground: 80 20% 60%;
+    --accent: 30 45% 50%;
+    --accent-foreground: 40 33% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 153 20% 18%;
+    --input: 153 20% 18%;
+    --ring: 100 100% 44%;
+    --chart-1: 100 100% 44%;
+    --chart-2: 153 39% 50%;
+    --chart-3: 30 45% 55%;
+    --chart-4: 80 30% 50%;
+    --chart-5: 40 50% 60%;
+    --sidebar-background: 153 39% 5%;
+    --sidebar-foreground: 80 30% 92%;
+    --sidebar-primary: 100 100% 44%;
+    --sidebar-primary-foreground: 153 39% 15%;
+    --sidebar-accent: 153 39% 12%;
+    --sidebar-accent-foreground: 80 30% 92%;
+    --sidebar-border: 153 20% 15%;
+    --sidebar-ring: 100 100% 44%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+[dir="ltr"] {
+  font-family: var(--font-body), sans-serif;
+}
+
+[dir="rtl"] {
+  font-family: var(--font-arabic), sans-serif;
+}

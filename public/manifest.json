@@ -1,0 +1,16 @@
+{
+  "name": "FOOD LOOP",
+  "short_name": "FOOD LOOP",
+  "description": "FOOD LOOP transforms damaged vegetables and fruits into compost, seeds, and seedlings.",
+  "start_url": "/food---loop-/",
+  "display": "standalone",
+  "background_color": "#F7F3EA",
+  "theme_color": "#5f6f52",
+  "icons": [
+    {
+      "src": "food-loop-logo.jpeg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
