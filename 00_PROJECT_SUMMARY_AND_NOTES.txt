@@ -1,0 +1,42 @@
+/*
+============================================================
+FOOD LOOP — Base44 / React Project Update
+============================================================
+
+Purpose:
+This file contains the first Base44 project export after organizing and applying
+all requested programming and design updates for the FOOD LOOP website.
+
+Main updates included:
+1. FOOD LOOP logo integration in Navbar and Footer.
+2. New brand direction: damaged vegetables and fruits → compost, seeds, seedlings.
+3. Off-white visual identity background: #F7F3EA.
+4. Main brand green: #5f6f52.
+5. Muted secondary tone: #8a8f87.
+6. Removed unwanted blur / glass / haze effects.
+7. Hero text updated to off-white for better readability.
+8. Arabic font direction: Cairo.
+9. English font direction: Acumin Variable Concept with safe fallbacks.
+10. Click-to-play sustainability video behavior.
+11. Product cards updated with real image fields instead of emoji placeholders.
+12. Blog cards updated with real image fields instead of document icons.
+13. Navigation adjusted: “عن المشروع” → “من نحن”; Tracker hidden from visible navigation.
+14. Products updated: Organic Compost, Garden Mix, Fruitful Farm Mix, Seedling Starter Mix, seedlings and herbs.
+15. Services updated: compost, seedlings, damaged produce collection, request seeds.
+16. Contact information updated to Jordan / +962 direction.
+17. Blog CTA updated to “تعرّف على المزيد / Learn More”.
+18. Impact direction updated to “الفرق الذي نصنعه / The Difference We Make”.
+19. RTL/LTR and Arabic/English language behavior preserved.
+20. Existing Base44 structure preserved as much as possible.
+
+Important asset path:
+public/food-loop-logo.jpeg
+
+GitHub note:
+This is a Base44 exported text/code file. If your GitHub project is already split
+into folders and components, copy the matching code sections into their original
+files and keep the logo image inside the public folder using this exact path:
+public/food-loop-logo.jpeg
+
+============================================================
+*/
