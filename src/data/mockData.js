@@ -107,7 +107,7 @@ export const blogPosts = [
     imageAlt: 'Value of damaged vegetables and fruits', imageAltAr: 'قيمة الخضار والفواكه التالفة'
   },
   {
-    id: 2, title: 'Home Composting: A Beginner's Guide', titleAr: 'التسميد المنزلي: دليل المبتدئين',
+    id: 2, title: "Home Composting: A Beginner's Guide", titleAr: 'التسميد المنزلي: دليل المبتدئين',
     excerpt: 'Learn the basics of organic composting at home and reduce food loss.', 
     excerptAr: 'تعلم أساسيات التسميد العضوي في المنزل وتقليل الهدر الغذائي.',
     category: 'composting', readTime: 7, date: '2026-03-10',
