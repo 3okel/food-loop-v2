@@ -1,18 +1,15 @@
-import { Outlet } from 'react-router-dom';
-import Navbar from './Navbar';
-import Footer from './Footer';
-import { useLanguage } from '@/hooks/useLanguage';
+import { Outlet } from 'react-router-dom'
+import Navbar from './Navbar.jsx'
+import Footer from './Footer.jsx'
+import { useLanguage } from '@/hooks/useLanguage'
 
 export default function PublicLayout() {
-  const { isRTL } = useLanguage();
-
+  const { isRTL } = useLanguage()
   return (
-    <div className={`min-h-screen flex flex-col ${isRTL ? 'font-arabic' : 'font-body'}`} dir={isRTL ? 'rtl' : 'ltr'}>
+    <div dir={isRTL ? 'rtl' : 'ltr'}>
       <Navbar />
-      <main className="flex-1 pt-16">
-        <Outlet />
-      </main>
+      <main className="main"><Outlet /></main>
       <Footer />
     </div>
-  );
+  )
 }

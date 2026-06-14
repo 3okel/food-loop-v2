@@ -1,9 +1,2 @@
-import { clsx } from "clsx"
-import { twMerge } from "tailwind-merge"
-
-export function cn(...inputs) {
-  return twMerge(clsx(inputs))
-} 
-
-
-export const isIframe = window.self !== window.top;
+export function cn(...inputs){ return inputs.filter(Boolean).join(' ') }
+export const isIframe = false

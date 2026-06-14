@@ -1,119 +1,33 @@
-import { Link } from 'react-router-dom';
-import { Mail, Phone, MapPin } from 'lucide-react';
-import { useLanguage } from '@/hooks/useLanguage';
-
-const FOOTER_LOGO_SRC = `${import.meta.env.BASE_URL}food-loop-logo.jpeg`;
+import { Link } from 'react-router-dom'
+import { Mail, MapPin, Phone } from 'lucide-react'
+import { useLanguage } from '@/hooks/useLanguage'
 
 export default function Footer() {
-  const { t, isRTL } = useLanguage();
-
-  const quickLinks = [
-    { path: '/', label: t('nav.home') },
-    { path: '/about', label: t('nav.about') },
-    { path: '/products', label: t('nav.products') },
-    { path: '/services', label: t('nav.services') },
-    { path: '/contact', label: t('nav.contact') },
-  ];
-
-  const resources = [
-    { path: '/how-it-works', label: t('nav.howItWorks') },
-    { path: '/impact', label: t('nav.impact') },
-    { path: '/blog', label: t('nav.blog') },
-    { path: '/calculator', label: t('nav.calculator') },
-    ];
-
+  const { t, isRTL } = useLanguage()
+  const quick = [['/', 'home'], ['/about', 'about'], ['/products', 'products'], ['/services', 'services'], ['/contact', 'contact']]
+  const resources = [['/how-it-works', 'howItWorks'], ['/impact', 'impact'], ['/blog', 'blog'], ['/calculator', 'calculator'], ['/partners', 'partners']]
+  const item = ([path, key]) => <li key={path}><Link to={path}>{t(`nav.${key}`)}</Link></li>
   return (
-    <footer className="bg-foreground text-background">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-          {/* Brand */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center gap-3 mb-4">
-              <img
-                src={FOOTER_LOGO_SRC}
-                alt="FOOD LOOP logo"
-                className="h-10 w-auto max-w-[150px] rounded-md object-contain"
-              />
-              <span className={`font-bold text-lg tracking-wide ${isRTL ? 'font-arabic' : 'font-heading'}`}>
-                FOOD LOOP
-              </span>
-            </div>
-            <p className={`text-background/70 text-sm leading-relaxed ${isRTL ? 'font-arabic' : ''}`}>
-              {t('footer.tagline')}
-            </p>
-            <div className="flex items-center gap-3 mt-6">
-              <a href="#" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" aria-label="Email">
-                <Mail className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" aria-label="Phone">
-                <Phone className="w-4 h-4" />
-              </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-background/10 flex items-center justify-center hover:bg-primary hover:text-primary-foreground transition-colors" aria-label="Location">
-                <MapPin className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
+    <footer className="footer">
+      <div className="container">
+        <div className="footer-grid">
           <div>
-            <h4 className={`font-bold text-sm uppercase tracking-wider mb-4 ${isRTL ? 'font-arabic' : ''}`}>
-              {t('footer.quickLinks')}
-            </h4>
-            <ul className="space-y-3">
-              {quickLinks.map(link => (
-                <li key={link.path}>
-                  <Link to={link.path} className={`text-background/70 hover:text-primary text-sm transition-colors ${isRTL ? 'font-arabic' : ''}`}>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <img className="footer-logo" src="/food-loop-logo.jpeg" alt="FOOD LOOP logo" />
+            <p>{t('footer.tagline')}</p>
           </div>
-
-          {/* Resources */}
+          <div><h4>{t('footer.quickLinks')}</h4><ul>{quick.map(item)}</ul></div>
+          <div><h4>{t('footer.resources')}</h4><ul>{resources.map(item)}</ul></div>
           <div>
-            <h4 className={`font-bold text-sm uppercase tracking-wider mb-4 ${isRTL ? 'font-arabic' : ''}`}>
-              {t('footer.resources')}
-            </h4>
-            <ul className="space-y-3">
-              {resources.map(link => (
-                <li key={link.path}>
-                  <Link to={link.path} className={`text-background/70 hover:text-primary text-sm transition-colors ${isRTL ? 'font-arabic' : ''}`}>
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Info */}
-          <div>
-            <h4 className={`font-bold text-sm uppercase tracking-wider mb-4 ${isRTL ? 'font-arabic' : ''}`}>
-              {t('footer.connect')}
-            </h4>
-            <div className="space-y-3 text-sm text-background/70">
-              <p className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-primary flex-shrink-0" />
-                info@foodloop.jo
-              </p>
-              <p className="flex items-center gap-2">
-                <Phone className="w-4 h-4 text-primary flex-shrink-0" />
-                +962 7X XXX XXXX
-              </p>
-              <p className="flex items-center gap-2">
-                <MapPin className="w-4 h-4 text-primary flex-shrink-0" />
-                {isRTL ? 'الأردن، عمّان' : 'Amman, Jordan'}
-              </p>
+            <h4>{t('footer.connect')}</h4>
+            <div className="info-list">
+              <a className="info-item" href="mailto:info@foodloop.jo"><Mail size={18}/> info@foodloop.jo</a>
+              <a className="info-item" href="tel:+962790000000"><Phone size={18}/> +962 79 000 0000</a>
+              <span className="info-item"><MapPin size={18}/> {isRTL ? 'عمّان، الأردن' : 'Amman, Jordan'}</span>
             </div>
           </div>
         </div>
-
-        <div className="border-t border-background/10 mt-12 pt-8 text-center text-background/50 text-sm">
-          <p className={isRTL ? 'font-arabic' : ''}>
-            © 2026 FOOD LOOP. {t('footer.rights')}
-          </p>
-        </div>
+        <div className="footer-bottom">© 2026 FOOD LOOP. {t('footer.rights')}</div>
       </div>
     </footer>
-  );
+  )
 }
